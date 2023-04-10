@@ -27,3 +27,67 @@ header {
   font-family: var(--judson);
   font-weight: 700;
 }
+
+.hamburger {
+  display: flex;
+  position: absolute;
+  padding-right: 1.5rem;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+  right: 0;
+  z-index: 5;
+  transition: transform 0.3s ease-in-out;
+}
+
+.hamburger.active .line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active .line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .line:nth-child(3) {
+  transform: rotate(-45deg) translate(7.5px, -7.5px);
+}
+
+.hamburger .line {
+  width: 75%;
+  height: 2px;
+  background-color: var(--darkgrey);
+  border-radius: 20%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.nav_menu {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-right: 2.5rem;
+  padding: 1rem;
+  background-color: var(--beige);
+}
+
+.nav_menu li {
+  margin-bottom: 1rem;
+  border-bottom: var(--darkgrey) solid 1.5px;
+  padding: 0.5rem;
+  width: 75%;
+  list-style: none;
+  padding-bottom: 1.5rem;
+}
+
+.nav_menu a {
+  text-decoration: none;
+  font-family: var(--judson);
+  color: var(--darkgrey);
+  padding-bottom: 1.5rem;
+}
+
+.nav_menu.show {
+  display: block;
+}
