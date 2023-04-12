@@ -31,13 +31,13 @@ header {
 .hamburger {
   display: flex;
   position: absolute;
-  padding-right: 1.5rem;
+  margin-right: 1.5rem;
   flex-direction: column;
   justify-content: space-between;
   width: 30px;
   height: 20px;
   cursor: pointer;
-  right: 0;
+  right: 0.5rem;
   z-index: 5;
   transition: transform 0.3s ease-in-out;
 }
@@ -59,35 +59,45 @@ header {
   height: 2px;
   background-color: var(--darkgrey);
   border-radius: 20%;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.35s ease-in-out;
 }
 
 .nav_menu {
-  display: none;
   position: absolute;
   top: 0;
-  right: 0;
+  right: 1rem;
   margin-right: 2.5rem;
   padding: 1rem;
+  opacity: 0;
   background-color: var(--beige);
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.5s ease-in-out;
 }
 
 .nav_menu li {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
   margin-bottom: 1rem;
   border-bottom: var(--darkgrey) solid 1.5px;
   padding: 0.5rem;
-  width: 75%;
+  width: 85%;
   list-style: none;
-  padding-bottom: 1.5rem;
+  padding-bottom: 1rem;
 }
 
 .nav_menu a {
   text-decoration: none;
   font-family: var(--judson);
+  font-size: 1.5rem;
   color: var(--darkgrey);
-  padding-bottom: 1.5rem;
+  padding-bottom: 1rem;
 }
 
 .nav_menu.show {
-  display: block;
+  opacity: 1;
+  max-height: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
